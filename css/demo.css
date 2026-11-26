@@ -1,0 +1,75 @@
+/*
+ * JZING demo — estilos exclusivos de la demostración estática.
+ * El resto del diseño viene sin cambios de los CSS del tema (base, layout, components, pages).
+ */
+
+/* Marcas de "simulado" ------------------------------------------------------- */
+.jz-badge--sim {
+	background: var(--c-surface);
+	color: var(--c-text);
+	border: 1.5px dashed var(--c-text-2);
+	cursor: help;
+}
+.jz-alert--sim {
+	background: var(--c-surface);
+	color: var(--c-text);
+	border: 1.5px dashed var(--c-line-strong);
+}
+.jz-alert--sim .jz-icon { color: var(--c-primary); }
+.jz-cta__sim { margin-top: .75rem !important; }
+.jz-cta .jz-badge--sim { background: transparent; color: var(--c-on-dark); border-color: var(--c-on-dark-2); }
+
+.jz-demo-banner a { color: inherit; font-weight: 600; text-decoration: underline; }
+.jz-demo-banner .jz-container { align-items: flex-start; }
+.jz-demo-banner .jz-icon { flex-shrink: 0; margin-top: .15rem; }
+@media (max-width: 39.99em) { .jz-demo-banner__long { display: none; } }
+
+/* La cabecera fija crea un contexto de apilamiento (sticky + z-index: 50): sin esto, la bandeja del
+   comparador (60) y el botón del asistente (70) quedarían encima del menú móvil abierto. */
+body.jz-lock .jz-header { z-index: 95; }
+
+/* Chat simulado de JZING Assistant -------------------------------------------- */
+.jz-chat {
+	position: fixed; right: 1rem; bottom: calc(5.25rem + env(safe-area-inset-bottom)); z-index: 75;
+	display: flex; flex-direction: column;
+	width: min(24rem, calc(100vw - 2rem)); height: min(34rem, calc(100vh - 8rem));
+	background: var(--c-surface); color: var(--c-text);
+	border: 1px solid var(--c-line-strong); border-radius: var(--r-panel);
+	box-shadow: var(--shadow-3); overflow: hidden;
+}
+.jz-chat[hidden] { display: none; }
+body.has-compare-tray .jz-chat { bottom: calc(9.5rem + env(safe-area-inset-bottom)); height: min(30rem, calc(100vh - 12rem)); }
+.jz-chat__head { display: flex; gap: .65rem; align-items: center; padding: .75rem .9rem; background: var(--jz-azul); color: #fff; }
+.jz-chat__head .jz-brand__mark { background: var(--jz-resaltador); color: var(--jz-tinta); }
+.jz-chat__title { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; }
+.jz-chat__sub { margin: 0; font-size: .75rem; color: #e3e8ff; }
+.jz-chat__head .jz-icon-btn { margin-left: auto; color: #fff; }
+.jz-chat__log { flex: 1; overflow-y: auto; padding: .9rem; display: flex; flex-direction: column; gap: .6rem; background: var(--c-bg); overscroll-behavior: contain; }
+.jz-chat__msg { max-width: 88%; padding: .6rem .8rem; border-radius: 12px; font-size: .92rem; line-height: 1.45; overflow-wrap: anywhere; }
+.jz-chat__msg p { margin: 0; }
+.jz-chat__msg--bot { align-self: flex-start; background: var(--c-surface); border: 1px solid var(--c-line); border-bottom-left-radius: 4px; }
+.jz-chat__msg--user { align-self: flex-end; background: var(--c-primary); color: var(--c-on-primary); border-bottom-right-radius: 4px; }
+.jz-chat__links { margin: .5rem 0 0; padding-left: 1.1rem; }
+.jz-chat__links li + li { margin-top: .2rem; }
+.jz-chat__typing { display: inline-flex; gap: .3rem; }
+.jz-chat__typing span:not(.screen-reader-text) { width: .45rem; height: .45rem; border-radius: 50%; background: var(--c-text-3); animation: jz-dot 1s infinite ease-in-out; }
+.jz-chat__typing span:nth-child(2) { animation-delay: .15s; }
+.jz-chat__typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes jz-dot { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+[data-motion="reduce"] .jz-chat__typing span { animation: none; }
+.jz-chat__suggestions { display: flex; gap: .4rem; overflow-x: auto; padding: .55rem .9rem; border-top: 1px solid var(--c-line); background: var(--c-surface); }
+.jz-chat__chip { flex: 0 0 auto; min-height: 36px; padding: .35rem .75rem; border: 1px solid var(--c-line-strong); border-radius: var(--r-pill); background: var(--c-surface-2); color: var(--c-text); font: inherit; font-size: .82rem; cursor: pointer; }
+.jz-chat__chip:hover { border-color: var(--c-primary); }
+.jz-chat__form { display: flex; gap: .5rem; padding: .65rem .9rem .8rem; border-top: 1px solid var(--c-line); background: var(--c-surface); }
+.jz-chat__form input { flex: 1; min-width: 0; min-height: 44px; padding: .5rem .75rem; border: 1.5px solid var(--c-line-strong); border-radius: var(--r-control); background: var(--c-surface); color: var(--c-text); font: inherit; }
+.jz-chat__form .jz-btn { min-width: 44px; padding-inline: .8rem; }
+.jz-chat__note { margin: 0; padding: 0 .9rem .6rem; font-size: .72rem; color: var(--c-text-2); background: var(--c-surface); }
+@media (max-width: 39.99em) {
+	.jz-chat { right: .5rem; left: .5rem; width: auto; bottom: calc(4.75rem + env(safe-area-inset-bottom)); height: min(32rem, calc(100vh - 7rem)); }
+	body.has-compare-tray .jz-chat { bottom: calc(12rem + env(safe-area-inset-bottom)); height: min(26rem, calc(100vh - 14rem)); }
+}
+@media print { .jz-chat { display: none !important; } }
+
+/* Los textos para lectores de pantalla (position: absolute) dentro de la tabla del comparador
+   escapaban del contenedor con scroll y ensanchaban la página en móviles. */
+.jz-compare-scroll { position: relative; }

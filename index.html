@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es-PE" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#2A44C8">
+	<meta name="description" content="Demostración estática de JZING: evaluación de docentes y secciones por dimensiones. Datos ficticios.">
+	<title>JZING — Demostración</title>
+	<script>(function(){var d=document.documentElement;d.classList.remove('no-js');d.classList.add('js');try{var p=JSON.parse(localStorage.getItem('jzing:a11y')||'{}');var k=['theme','tint','scale','tracking','leading','font','motion','links'];for(var i=0;i<k.length;i++){if(p[k[i]]){d.setAttribute('data-'+k[i],String(p[k[i]]));}}}catch(e){}})();</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+	<link rel="stylesheet" href="assets/css/base.css">
+	<link rel="stylesheet" href="assets/css/layout.css">
+	<link rel="stylesheet" href="assets/css/components.css">
+	<link rel="stylesheet" href="assets/css/pages.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+</head>
+<body>
+<a class="jz-skip" href="#contenido">Saltar al contenido</a>
+
+<div class="jz-demo-banner" role="note">
+	<div class="jz-container"><span data-icon="info"></span> <span><strong>Demostración estática</strong> con datos ficticios<span class="jz-demo-banner__long">; inicio de sesión, reseñas, moderación y asistente están simulados en tu navegador</span>. <a href="#/acerca-demo">Qué está simulado</a></span></div>
+</div>
+
+<header class="jz-header">
+	<div class="jz-container jz-header__inner">
+		<a class="jz-brand" href="#/">
+			<span class="jz-brand__mark" aria-hidden="true">JZ</span>
+			<span class="jz-brand__name">JZING</span>
+			<span class="screen-reader-text">— ir al inicio</span>
+		</a>
+		<nav class="jz-nav jz-nav--desktop" aria-label="Principal"><ul class="jz-nav__list" id="jz-menu-primary"><li class="menu-item"><a href="#/" data-nav="">Inicio</a></li><li class="menu-item"><a href="#/cursos" data-nav="cursos">Cursos</a></li><li class="menu-item"><a href="#/docentes" data-nav="docentes">Docentes</a></li><li class="menu-item"><a href="#/comparar" data-nav="comparar">Comparar</a></li><li class="menu-item"><a href="#/publicar-resena" data-nav="publicar-resena">Publicar reseña</a></li></ul></nav>
+		<div class="jz-header__actions">
+			<a class="jz-icon-btn" href="#/buscar"><span data-icon="search"></span><span class="screen-reader-text">Buscar cursos y docentes</span></a>
+			<button type="button" class="jz-btn jz-btn--ghost jz-btn--sm jz-a11y-trigger" data-a11y-open aria-controls="jz-a11y-panel" aria-expanded="false"><span data-icon="a11y"></span><span class="jz-a11y-trigger__text">Accesibilidad</span></button>
+			<div class="jz-header__account" data-account></div>
+			<button type="button" class="jz-menu-toggle" aria-expanded="false" aria-controls="jz-mobile-menu" data-menu-toggle><span data-icon="menu" data-icon-class="jz-menu-toggle__open"></span><span class="jz-menu-toggle__text">Menú</span></button>
+		</div>
+	</div>
+	<div class="jz-mobile-menu" id="jz-mobile-menu" data-mobile-menu hidden>
+		<div class="jz-mobile-menu__backdrop" data-menu-close></div>
+		<div class="jz-mobile-menu__panel" role="dialog" aria-modal="true" aria-labelledby="jz-mobile-menu-title">
+			<div class="jz-mobile-menu__head">
+				<p class="jz-mobile-menu__title" id="jz-mobile-menu-title">Menú</p>
+				<button type="button" class="jz-icon-btn" data-menu-close><span data-icon="close"></span><span class="screen-reader-text">Cerrar menú</span></button>
+			</div>
+			<nav class="jz-nav jz-nav--mobile" aria-label="Principal (móvil)"><ul class="jz-nav__list" id="jz-menu-primary-mobile"><li class="menu-item"><a href="#/" data-nav="">Inicio</a></li><li class="menu-item"><a href="#/cursos" data-nav="cursos">Cursos</a></li><li class="menu-item"><a href="#/docentes" data-nav="docentes">Docentes</a></li><li class="menu-item"><a href="#/comparar" data-nav="comparar">Comparar</a></li><li class="menu-item"><a href="#/publicar-resena" data-nav="publicar-resena">Publicar reseña</a></li></ul></nav>
+			<div class="jz-mobile-menu__extra">
+				<button type="button" class="jz-btn jz-btn--secondary jz-btn--block" data-a11y-open aria-controls="jz-a11y-panel" aria-expanded="false"><span data-icon="a11y"></span><span>Opciones de accesibilidad</span></button>
+				<div class="jz-mobile-menu__account" data-account></div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="jz-a11y" id="jz-a11y-panel" data-a11y-panel hidden>
+	<div class="jz-a11y__backdrop" data-a11y-close></div>
+	<section class="jz-a11y__panel" role="dialog" aria-modal="true" aria-labelledby="jz-a11y-title" aria-describedby="jz-a11y-desc" tabindex="-1">
+		<header class="jz-a11y__head">
+			<h2 class="jz-a11y__title" id="jz-a11y-title"><span data-icon="a11y"></span> Accesibilidad y lectura</h2>
+			<button type="button" class="jz-icon-btn" data-a11y-close><span data-icon="close"></span><span class="screen-reader-text">Cerrar panel de accesibilidad</span></button>
+		</header>
+		<p class="jz-a11y__desc" id="jz-a11y-desc">Combina las opciones que te resulten más cómodas. Se guardan solo en este navegador.</p>
+		<form class="jz-a11y__form" data-a11y-form>
+			<fieldset class="jz-fieldset"><legend>Contraste y colores</legend><div class="jz-choices jz-choices--3"><label class="jz-choice" for="jz-a11y-theme-light"><input type="radio" id="jz-a11y-theme-light" name="theme" value="light"><span class="jz-choice__box"><span class="jz-choice__label">Claro</span></span></label><label class="jz-choice" for="jz-a11y-theme-dark"><input type="radio" id="jz-a11y-theme-dark" name="theme" value="dark"><span class="jz-choice__box"><span class="jz-choice__label">Oscuro</span></span></label><label class="jz-choice" for="jz-a11y-theme-contrast"><input type="radio" id="jz-a11y-theme-contrast" name="theme" value="contrast"><span class="jz-choice__box"><span class="jz-choice__label">Alto contraste</span></span></label></div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Fondo de lectura</legend><p class="jz-fieldset__hint">Un fondo tenue puede reducir el brillo. No hay un color que sirva para todas las personas: prueba cuál te acomoda. Se aplica con el tema claro.</p><div class="jz-choices jz-choices--4"><label class="jz-choice" for="jz-a11y-tint-none"><input type="radio" id="jz-a11y-tint-none" name="tint" value="none"><span class="jz-choice__box"><span class="jz-choice__label">Blanco</span></span></label><label class="jz-choice" for="jz-a11y-tint-cream"><input type="radio" id="jz-a11y-tint-cream" name="tint" value="cream"><span class="jz-choice__box"><span class="jz-choice__label">Crema</span></span></label><label class="jz-choice" for="jz-a11y-tint-blue"><input type="radio" id="jz-a11y-tint-blue" name="tint" value="blue"><span class="jz-choice__box"><span class="jz-choice__label">Azul suave</span></span></label><label class="jz-choice" for="jz-a11y-tint-gray"><input type="radio" id="jz-a11y-tint-gray" name="tint" value="gray"><span class="jz-choice__box"><span class="jz-choice__label">Gris cálido</span></span></label></div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Tamaño del texto</legend><div class="jz-range">
+				<button type="button" class="jz-icon-btn jz-icon-btn--bordered" data-scale-step="-1"><span data-icon="minus"></span><span class="screen-reader-text">Reducir texto</span></button>
+				<label class="screen-reader-text" for="jz-a11y-scale">Tamaño del texto</label>
+				<input type="range" id="jz-a11y-scale" name="scale" min="0" max="4" step="1" value="1" aria-describedby="jz-a11y-scale-out">
+				<button type="button" class="jz-icon-btn jz-icon-btn--bordered" data-scale-step="1"><span data-icon="plus"></span><span class="screen-reader-text">Aumentar texto</span></button>
+				<output id="jz-a11y-scale-out" for="jz-a11y-scale" class="jz-range__out">100 %</output>
+			</div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Espaciado entre letras y palabras</legend><div class="jz-choices jz-choices--3"><label class="jz-choice" for="jz-a11y-tracking-normal"><input type="radio" id="jz-a11y-tracking-normal" name="tracking" value="normal"><span class="jz-choice__box"><span class="jz-choice__label">Normal</span></span></label><label class="jz-choice" for="jz-a11y-tracking-wide"><input type="radio" id="jz-a11y-tracking-wide" name="tracking" value="wide"><span class="jz-choice__box"><span class="jz-choice__label">Amplio</span></span></label><label class="jz-choice" for="jz-a11y-tracking-wider"><input type="radio" id="jz-a11y-tracking-wider" name="tracking" value="wider"><span class="jz-choice__box"><span class="jz-choice__label">Muy amplio</span></span></label></div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Interlineado</legend><div class="jz-choices jz-choices--3"><label class="jz-choice" for="jz-a11y-leading-normal"><input type="radio" id="jz-a11y-leading-normal" name="leading" value="normal"><span class="jz-choice__box"><span class="jz-choice__label">Normal</span><span class="jz-choice__hint">1,5</span></span></label><label class="jz-choice" for="jz-a11y-leading-relaxed"><input type="radio" id="jz-a11y-leading-relaxed" name="leading" value="relaxed"><span class="jz-choice__box"><span class="jz-choice__label">Amplio</span><span class="jz-choice__hint">1,8</span></span></label><label class="jz-choice" for="jz-a11y-leading-loose"><input type="radio" id="jz-a11y-leading-loose" name="leading" value="loose"><span class="jz-choice__box"><span class="jz-choice__label">Muy amplio</span><span class="jz-choice__hint">2,0</span></span></label></div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Tipografía</legend><div class="jz-choices jz-choices--2"><label class="jz-choice" for="jz-a11y-font-poppins"><input type="radio" id="jz-a11y-font-poppins" name="font" value="poppins"><span class="jz-choice__box"><span class="jz-choice__label">Poppins</span><span class="jz-choice__hint">Predeterminada</span></span></label><label class="jz-choice" for="jz-a11y-font-atkinson"><input type="radio" id="jz-a11y-font-atkinson" name="font" value="atkinson"><span class="jz-choice__box"><span class="jz-choice__label">Atkinson Hyperlegible</span><span class="jz-choice__hint">Letras muy diferenciadas</span></span></label><label class="jz-choice" for="jz-a11y-font-lexend"><input type="radio" id="jz-a11y-font-lexend" name="font" value="lexend"><span class="jz-choice__box"><span class="jz-choice__label">Lexend</span><span class="jz-choice__hint">Formas amplias</span></span></label><label class="jz-choice" for="jz-a11y-font-system"><input type="radio" id="jz-a11y-font-system" name="font" value="system"><span class="jz-choice__box"><span class="jz-choice__label">Verdana</span><span class="jz-choice__hint">Del sistema, sin descarga</span></span></label></div></fieldset>
+			<fieldset class="jz-fieldset"><legend>Otras opciones</legend>
+				<label class="jz-switch" for="jz-a11y-links"><input type="checkbox" id="jz-a11y-links" name="links" value="underline" role="switch"><span class="jz-switch__track" aria-hidden="true"></span><span>Subrayar todos los enlaces</span></label>
+				<label class="jz-switch" for="jz-a11y-motion"><input type="checkbox" id="jz-a11y-motion" name="motion" value="reduce" role="switch"><span class="jz-switch__track" aria-hidden="true"></span><span>Reducir animaciones</span></label>
+			</fieldset>
+			<div class="jz-a11y__actions"><button type="button" class="jz-btn jz-btn--secondary" data-a11y-reset>Restablecer</button><button type="button" class="jz-btn jz-btn--primary" data-a11y-close>Listo</button></div>
+			<p class="jz-a11y__note">Estas opciones no son un tratamiento para la dislexia ni para otras condiciones; solo ajustan la presentación. <a href="#/accesibilidad" data-a11y-close>Declaración de accesibilidad</a></p>
+			<p class="screen-reader-text" role="status" aria-live="polite" data-a11y-status></p>
+		</form>
+	</section>
+</div>
+
+<main id="contenido" class="jz-main" tabindex="-1">
+	<noscript><div class="jz-container jz-page-body"><p class="jz-alert jz-alert--warning">Esta demostración necesita JavaScript. Actívalo en tu navegador para navegar por JZING.</p></div></noscript>
+</main>
+
+<footer class="jz-footer">
+	<div class="jz-container jz-footer__grid">
+		<div class="jz-footer__brand">
+			<a class="jz-brand jz-brand--inverse" href="#/"><span class="jz-brand__mark" aria-hidden="true">JZ</span><span class="jz-brand__name">JZING</span></a>
+			<p>Evaluación de docentes y secciones por dimensiones. Sin rankings: información para que decidas tú.</p>
+		</div>
+		<nav aria-label="Explorar"><p class="jz-footer__title">Explorar</p><ul role="list"><li><a href="#/cursos">Cursos</a></li><li><a href="#/docentes">Docentes</a></li><li><a href="#/comparar">Comparar secciones</a></li></ul></nav>
+		<nav aria-label="Comunidad"><p class="jz-footer__title">Comunidad</p><ul role="list"><li><a href="#/publicar-resena">Publicar reseña</a></li><li><a href="#/mis-resenas">Mis reseñas</a></li><li><a href="#/inicio/preguntas">Preguntas frecuentes</a></li></ul></nav>
+		<nav aria-label="Ayuda"><p class="jz-footer__title">Ayuda</p><ul role="list"><li><a href="#/accesibilidad">Accesibilidad</a></li><li><a href="#/inicio/como-funciona">Cómo funciona</a></li><li><a href="#/acerca-demo">Sobre esta demo</a></li></ul></nav>
+	</div>
+	<div class="jz-container jz-footer__legal">
+		<p>JZING es un proyecto académico independiente desarrollado por estudiantes. No es un servicio oficial de la Universidad Peruana de Ciencias Aplicadas (UPC) ni realiza matrículas. Esta es una demostración con datos ficticios.</p>
+		<p>&copy; 2026 JZING</p>
+	</div>
+</footer>
+
+<div class="jz-compare-tray" data-compare-tray hidden>
+	<div class="jz-container jz-compare-tray__inner">
+		<div class="jz-compare-tray__info"><p class="jz-compare-tray__title" data-compare-count></p><p class="jz-compare-tray__items" data-compare-items></p></div>
+		<div class="jz-compare-tray__actions">
+			<button type="button" class="jz-btn jz-btn--tertiary jz-btn--inverse jz-btn--sm" data-compare-clear>Vaciar</button>
+			<a class="jz-btn jz-btn--primary jz-btn--sm" href="#/comparar" data-compare-go><span data-icon="columns"></span><span>Comparar ahora</span></a>
+		</div>
+	</div>
+</div>
+
+<dialog class="jz-dialog" data-report-dialog aria-labelledby="jz-report-title">
+	<form method="dialog" class="jz-dialog__form" data-report-form novalidate>
+		<h2 class="jz-dialog__title" id="jz-report-title">Reportar reseña</h2>
+		<fieldset class="jz-fieldset"><legend>Motivo <span class="jz-req">(obligatorio)</span></legend>
+			<label class="jz-radio"><input type="radio" name="motivo" value="ofensiva" required> <span>Es ofensiva o irrespetuosa</span></label><label class="jz-radio"><input type="radio" name="motivo" value="falsa" required> <span>Parece falsa o malintencionada</span></label><label class="jz-radio"><input type="radio" name="motivo" value="no_corresponde" required> <span>No corresponde a este curso o docente</span></label><label class="jz-radio"><input type="radio" name="motivo" value="datos_personales" required> <span>Incluye datos personales</span></label><label class="jz-radio"><input type="radio" name="motivo" value="otro" required> <span>Otro motivo</span></label>
+		</fieldset>
+		<div class="jz-field"><label for="jz-report-detail">Detalle (opcional)</label><textarea id="jz-report-detail" name="detalle" rows="3" maxlength="300"></textarea></div>
+		<p class="jz-form-error" data-report-error role="alert" hidden></p>
+		<div class="jz-dialog__actions"><button type="button" class="jz-btn jz-btn--tertiary" data-report-cancel>Cancelar</button><button type="submit" class="jz-btn jz-btn--primary" value="send">Enviar reporte</button></div>
+	</form>
+</dialog>
+
+<button type="button" id="jzing-assistant-toggle" class="jz-assistant-fab" aria-expanded="false" aria-controls="jz-chat" aria-label="Abrir JZING Assistant"><span data-icon="chat"></span><span class="jz-assistant-fab__text" aria-hidden="true">Asistente</span></button>
+<section class="jz-chat" id="jz-chat" data-chat role="dialog" aria-labelledby="jz-chat-title" aria-describedby="jz-chat-note" hidden>
+	<header class="jz-chat__head">
+		<span class="jz-brand__mark" aria-hidden="true">JZ</span>
+		<div><h2 class="jz-chat__title" id="jz-chat-title">JZING Assistant</h2><p class="jz-chat__sub">Simulación local</p></div>
+		<button type="button" class="jz-icon-btn" data-chat-close><span data-icon="close"></span><span class="screen-reader-text">Cerrar JZING Assistant</span></button>
+	</header>
+	<div class="jz-chat__log" data-chat-log role="log" aria-live="polite" tabindex="0" aria-label="Conversación"></div>
+	<div class="jz-chat__suggestions" data-chat-suggestions role="group" aria-label="Preguntas sugeridas"></div>
+	<form class="jz-chat__form" data-chat-form>
+		<label class="screen-reader-text" for="jz-chat-input">Escribe tu pregunta</label>
+		<input id="jz-chat-input" name="mensaje" type="text" maxlength="300" autocomplete="off" placeholder="Pregunta sobre cursos o docentes">
+		<button type="submit" class="jz-btn jz-btn--primary"><span data-icon="send"></span><span class="screen-reader-text">Enviar</span></button>
+	</form>
+	<p class="jz-chat__note" id="jz-chat-note">Simulación local en el navegador. En el proyecto real responde Botpress usando la API de WordPress.</p>
+</section>
+
+<div class="jz-toasts" aria-live="polite" aria-atomic="false" data-toasts></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/assistant-engine.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
